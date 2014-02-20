@@ -34,6 +34,7 @@
 		E22E104F18B67C5C00B5693F /* rotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rotor.cpp; sourceTree = "<group>"; };
 		E22E105118B695B700B5693F /* tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tests.cpp; sourceTree = "<group>"; };
 		E22E105218B695B700B5693F /* tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tests.h; sourceTree = "<group>"; };
+		E22E105418B6A19500B5693F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 			children = (
 				E22E104218B6763500B5693F /* main.cpp */,
 				E22E104F18B67C5C00B5693F /* rotor.cpp */,
+				E22E105418B6A19500B5693F /* README.md */,
 				E22E104E18B67C5600B5693F /* rotor.h */,
 				E22E105118B695B700B5693F /* tests.cpp */,
 				E22E105218B695B700B5693F /* tests.h */,
