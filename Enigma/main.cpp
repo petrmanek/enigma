@@ -7,12 +7,22 @@
 //
 
 #include <iostream>
+#include "tests.h"
 
 int main(int argc, const char * argv[])
 {
+    // Last test attempted
+    test_rotor_custom_wiring();
 
-    // insert code here...
-    std::cout << "Hello, World!\n";
     return 0;
 }
 
+/*
+ USAGE: enigma []
+ 
+ PARAMETERS:
+    -g --generate       Generates random key file.
+ 
+ CONFIGURATIONS:
+    -r --rotors         Sets number of rotors
+*/

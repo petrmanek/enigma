@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E22E104318B6763500B5693F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E104218B6763500B5693F /* main.cpp */; };
 		E22E104518B6763500B5693F /* Enigma.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E22E104418B6763500B5693F /* Enigma.1 */; };
+		E22E105018B67C5C00B5693F /* rotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E104F18B67C5C00B5693F /* rotor.cpp */; };
+		E22E105318B695B700B5693F /* tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E105118B695B700B5693F /* tests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,10 @@
 		E22E103F18B6763500B5693F /* Enigma */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Enigma; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22E104218B6763500B5693F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E22E104418B6763500B5693F /* Enigma.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Enigma.1; sourceTree = "<group>"; };
+		E22E104E18B67C5600B5693F /* rotor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rotor.h; sourceTree = "<group>"; };
+		E22E104F18B67C5C00B5693F /* rotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rotor.cpp; sourceTree = "<group>"; };
+		E22E105118B695B700B5693F /* tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tests.cpp; sourceTree = "<group>"; };
+		E22E105218B695B700B5693F /* tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tests.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				E22E104218B6763500B5693F /* main.cpp */,
+				E22E104F18B67C5C00B5693F /* rotor.cpp */,
+				E22E104E18B67C5600B5693F /* rotor.h */,
+				E22E105118B695B700B5693F /* tests.cpp */,
+				E22E105218B695B700B5693F /* tests.h */,
 				E22E104418B6763500B5693F /* Enigma.1 */,
 			);
 			path = Enigma;
@@ -117,6 +127,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22E105018B67C5C00B5693F /* rotor.cpp in Sources */,
+				E22E105318B695B700B5693F /* tests.cpp in Sources */,
 				E22E104318B6763500B5693F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +207,7 @@
 		E22E104918B6763500B5693F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -202,6 +215,7 @@
 		E22E104A18B6763500B5693F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
