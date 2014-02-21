@@ -10,12 +10,13 @@
 #define __Enigma__tests__
 
 #include <iostream>
-#include "rotor.h"
+#include "machine.h"
 
 void test_rotor();
 void test_rotor_custom_wiring();
 
 void test_rotor_forward_backward();
 void test_rotor_turnover();
+void test_machine_encode();
 
 #endif /* defined(__Enigma__tests__) */

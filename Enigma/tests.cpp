@@ -74,3 +74,15 @@ void test_rotor_turnover() {
     
     std::cout << "\n";
 }
+
+void test_machine_encode() {
+    // Encode few letters and log the output.
+    
+    machine m;
+    
+    for (int i = 0; i < 100; i++) {
+        std::cout << m.encode(65);
+    }
+    
+    std::cout << "\n";
+}

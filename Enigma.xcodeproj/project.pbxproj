@@ -11,6 +11,7 @@
 		E22E104518B6763500B5693F /* Enigma.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E22E104418B6763500B5693F /* Enigma.1 */; };
 		E22E105018B67C5C00B5693F /* rotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E104F18B67C5C00B5693F /* rotor.cpp */; };
 		E22E105318B695B700B5693F /* tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E105118B695B700B5693F /* tests.cpp */; };
+		E2502B2118B79B49004E52E6 /* machine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2502B1F18B79B49004E52E6 /* machine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,8 @@
 		E22E105118B695B700B5693F /* tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tests.cpp; sourceTree = "<group>"; };
 		E22E105218B695B700B5693F /* tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tests.h; sourceTree = "<group>"; };
 		E22E105518B6A21100B5693F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E2502B1F18B79B49004E52E6 /* machine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = machine.cpp; sourceTree = "<group>"; };
+		E2502B2018B79B49004E52E6 /* machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = machine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				E22E104E18B67C5600B5693F /* rotor.h */,
 				E22E105118B695B700B5693F /* tests.cpp */,
 				E22E105218B695B700B5693F /* tests.h */,
+				E2502B1F18B79B49004E52E6 /* machine.cpp */,
+				E2502B2018B79B49004E52E6 /* machine.h */,
 				E22E104418B6763500B5693F /* Enigma.1 */,
 			);
 			path = Enigma;
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E22E105018B67C5C00B5693F /* rotor.cpp in Sources */,
+				E2502B2118B79B49004E52E6 /* machine.cpp in Sources */,
 				E22E105318B695B700B5693F /* tests.cpp in Sources */,
 				E22E104318B6763500B5693F /* main.cpp in Sources */,
 			);
@@ -241,6 +247,7 @@
 				E22E104A18B6763500B5693F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

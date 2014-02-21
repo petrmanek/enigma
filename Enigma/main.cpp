@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[])
 {
     // Last test attempted
-    test_rotor_turnover();
+    test_machine_encode();
 
     return 0;
 }
