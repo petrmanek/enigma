@@ -14,12 +14,19 @@
 
 class plugboard {
 public:
+    // Initialize new empty plugboard
     plugboard();
     
+    // Connect two characters (and remove any previous connections of theirs)
     void set(char,char);
+    
+    // Remove any connection of a character
     void remove(char);
+    
+    // Remove all connections
     void reset();
     
+    // Encode character using current configuration
     char encode(char);
     
 private:
