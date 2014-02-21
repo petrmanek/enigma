@@ -12,7 +12,7 @@ void test_rotor() {
     // Encode the same letter few times over and
     // see if the rotor changes offset.
     
-    Rotor r(w1);
+    rotor r(w1);
     
     std::cout << r.encode_forward(65);
     r.step();
@@ -30,7 +30,7 @@ void test_rotor_custom_wiring() {
     // Same as test_rotor, but with ordinary
     // alphabetic wiring.
     
-    Rotor r("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    rotor r("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     
     std::cout << r.encode_forward(65);
     r.step();
@@ -48,7 +48,7 @@ void test_rotor_forward_backward() {
     // Encode letter forward and backward
     // to test symetric cipher
     
-    Rotor r(w1);
+    rotor r(w1);
     
     std::cout << r.encode_forward(65);
     std::cout << r.encode_backward(65);

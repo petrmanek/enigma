@@ -19,13 +19,13 @@ const char ascii_start = 65;
 
 
 #pragma mark - Constructors
-Rotor::Rotor(RotorType type) {
+rotor::rotor(rotor_wiring type) {
     // initialize instance vars
     m_offset = 0;
     m_wiring = this->known_wiring(type);
 }
 
-Rotor::Rotor(std::string wiring) {
+rotor::rotor(std::string wiring) {
     // check if the string has 26 chars
     if (wiring.length() != 26)
         throw std::runtime_error("Exactly 26 characters are expected in the string.");
@@ -49,21 +49,21 @@ Rotor::Rotor(std::string wiring) {
 
 
 #pragma mark - Offset
-char Rotor::get_offset() {
+char rotor::get_offset() {
     return ascii_start + this->m_offset;
 }
 
-void Rotor::set_offset(int o) {
+void rotor::set_offset(int o) {
     this->m_offset = o % 26;
 }
 
-void Rotor::step() {
+void rotor::step() {
     this->set_offset(this->m_offset + 1);
 }
 
 
 #pragma mark - Character encoding
-char Rotor::encode_forward(char c) {
+char rotor::encode_forward(char c) {
     if (!isalpha(c))
         throw std::runtime_error("Lowercase or uppercase ASCII character expected.");
     
@@ -73,7 +73,7 @@ char Rotor::encode_forward(char c) {
     return this->m_wiring[offset];
 }
 
-char Rotor::encode_backward(char c) {
+char rotor::encode_backward(char c) {
     if (!isalpha(c))
         throw std::runtime_error("Lowercase or uppercase ASCII character expected.");
     
@@ -88,7 +88,7 @@ char Rotor::encode_backward(char c) {
 
 
 #pragma mark - Known wiring configurations (from wikipedia)
-std::string Rotor::known_wiring(RotorType type) {
+std::string rotor::known_wiring(rotor_wiring type) {
     switch (type) {
         case c1:
         {

@@ -12,7 +12,7 @@
 #include <iostream>
 #include <string>
 
-enum RotorType {
+enum rotor_wiring {
     c1, c2, c3, // Commercial Enigma A, B - 1924
     gr1, gr2, gr3, gr_ukw, gr_etw, // German Railway (Rocket) - 1941
     k1, k2, k3, k_ukw, k_etw, // Swiss K - 1939
@@ -20,13 +20,13 @@ enum RotorType {
     w_beta, w_gamma, w_ra, w_rb, w_rc, w_rbt, w_rct, w_etw // Military Rotors - 1940-1942
 };
 
-class Rotor {
+class rotor {
 public:
     // Initialize rotor with known wiring
-    Rotor(RotorType);
+    rotor(rotor_wiring);
     
     // Initialize rotor with custom wiring
-    Rotor(std::string);
+    rotor(std::string);
     
     // Gets current offset of the rotor (as letter)
     char get_offset();
@@ -47,7 +47,7 @@ private:
     int m_offset;
     std::string m_wiring;
     
-    std::string known_wiring(RotorType);
+    std::string known_wiring(rotor_wiring);
 };
 
 #endif /* defined(__Enigma__rotor__) */
