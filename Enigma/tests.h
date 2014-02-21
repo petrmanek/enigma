@@ -20,5 +20,7 @@ void test_rotor_forward_backward();
 void test_rotor_turnover();
 void test_machine_encode();
 void test_plugboard();
+void test_machine_encode_plugboard();
+void test_machine_encode_decode();
 
 #endif /* defined(__Enigma__tests__) */

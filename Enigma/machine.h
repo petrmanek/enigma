@@ -11,15 +11,20 @@
 
 #include <iostream>
 #include "rotor.h"
+#include "plug.h"
 
 class machine {
 public:
     machine();
     
     char encode(char);
+    std::string encode_string(std::string);
+    
+    plugboard plugs;
     
 private:
-    rotor m_r1, m_r2, m_r3;
+    rotor m_r1, m_r2, m_r3, m_reflector;
+    
 };
 
 #endif /* defined(__Enigma__machine__) */

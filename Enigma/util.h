@@ -14,4 +14,6 @@
 #pragma mark - Constants
 const char ASCII_START = 65;
 
+int mod(int,int);
+
 #endif /* defined(__Enigma__util__) */

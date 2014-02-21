@@ -108,3 +108,40 @@ void test_plugboard() {
     
     std::cout << "\n";
 }
+
+void test_machine_encode_plugboard() {
+    // Encode few letters and log the output.
+    
+    machine m;
+    
+    m.plugs.set('A', 'D');
+    m.plugs.set('O', 'L');
+    
+    std::string s = m.encode_string("AHOJ");
+    std::cout << "\n\nEntire encoded message: " << s;
+    
+    std::cout << "\n";
+}
+
+void test_machine_encode_decode() {
+    // Encode few letters and log the output.
+    
+    machine m, n;
+    
+    m.plugs.set('A', 'D');
+    m.plugs.set('O', 'L');
+    
+    n.plugs.set('A', 'D');
+    n.plugs.set('O', 'L');
+    
+    for (int i = 0; i < 100; i++) {
+        std::string s = m.encode_string("AHOJ");
+        std::cout << "\n\nEntire encoded message: " << s;
+        std::cout << "\nDecoding now...";
+        
+        std::string t = n.encode_string(s);
+        std::cout << "\n\nEntire decoded message: " << t;
+    }
+    
+    std::cout << "\n";
+}

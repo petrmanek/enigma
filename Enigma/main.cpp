@@ -12,8 +12,8 @@
 int main(int argc, const char * argv[])
 {
     // Last test attempted
-    test_plugboard();
-
+    test_machine_encode_decode();
+    
     return 0;
 }
 

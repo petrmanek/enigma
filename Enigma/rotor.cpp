@@ -52,7 +52,7 @@ char rotor::get_offset() {
 }
 
 void rotor::set_offset(int o) {
-    this->m_offset = o % 26;
+    this->m_offset = mod(o, 26);
 }
 
 void rotor::step() {
@@ -70,7 +70,7 @@ char rotor::encode_forward(char c) {
         throw std::runtime_error("Lowercase or uppercase ASCII character expected.");
     
     char normalized = toupper(c);
-    int offset = (this->m_offset + normalized - ASCII_START) % 26;
+    int offset = mod(this->m_offset + normalized - ASCII_START, 26);
     
     return this->m_wiring[offset];
 }
@@ -85,7 +85,7 @@ char rotor::encode_backward(char c) {
     if (index == std::string::npos)
         throw std::runtime_error("Invalid wiring. Character not found");
     
-    return ASCII_START + (int)index;
+    return ASCII_START + mod((int)index - this->m_offset, 26);
 }
 
 
