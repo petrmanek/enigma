@@ -31,6 +31,7 @@ public:
     
 private:
     int m_mappings[26];
+    const int empty = -1;
     
     int index(char);
     
