@@ -13,10 +13,16 @@ void test_rotor() {
     // see if the rotor changes offset.
     
     Rotor r(w1);
-    std::cout << r.encode(65);
-    std::cout << r.encode(65);
-    std::cout << r.encode(65);
-    std::cout << r.encode(65);
+    
+    std::cout << r.encode_forward(65);
+    r.step();
+    std::cout << r.encode_forward(65);
+    r.step();
+    std::cout << r.encode_forward(65);
+    r.step();
+    std::cout << r.encode_forward(65);
+    r.step();
+    
     std::cout << "\n";
 }
 
@@ -25,9 +31,27 @@ void test_rotor_custom_wiring() {
     // alphabetic wiring.
     
     Rotor r("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    std::cout << r.encode(65);
-    std::cout << r.encode(65);
-    std::cout << r.encode(65);
-    std::cout << r.encode(65);
+    
+    std::cout << r.encode_forward(65);
+    r.step();
+    std::cout << r.encode_forward(65);
+    r.step();
+    std::cout << r.encode_forward(65);
+    r.step();
+    std::cout << r.encode_forward(65);
+    r.step();
+    
+    std::cout << "\n";
+}
+
+void test_rotor_forward_backward() {
+    // Encode letter forward and backward
+    // to test symetric cipher
+    
+    Rotor r(w1);
+    
+    std::cout << r.encode_forward(65);
+    std::cout << r.encode_backward(65);
+    
     std::cout << "\n";
 }

@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[])
 {
     // Last test attempted
-    test_rotor_custom_wiring();
+    test_rotor_forward_backward();
 
     return 0;
 }

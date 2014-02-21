@@ -34,14 +34,14 @@ public:
     // Sets current offset of the rotor (as integer modulo 26)
     void set_offset(int);
     
-    // Increments current offset
+    // Increments the offset
     void step();
     
-    // Encodes character without stepping the rotor.
-    char peek(char);
+    // Encodes character in forward direction.
+    char encode_forward(char);
     
-    // Encodes character and steps the rotor.
-    char encode(char);
+    // Encodes character in backward direction.
+    char encode_backward(char);
     
 private:
     int m_offset;

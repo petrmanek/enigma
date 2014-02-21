@@ -63,7 +63,7 @@ void Rotor::step() {
 
 
 #pragma mark - Character encoding
-char Rotor::peek(char c) {
+char Rotor::encode_forward(char c) {
     if (!isalpha(c))
         throw std::runtime_error("Lowercase or uppercase ASCII character expected.");
     
@@ -73,13 +73,17 @@ char Rotor::peek(char c) {
     return this->m_wiring[offset];
 }
 
-char Rotor::encode(char c) {
-    char encoded;
+char Rotor::encode_backward(char c) {
+    if (!isalpha(c))
+        throw std::runtime_error("Lowercase or uppercase ASCII character expected.");
     
-    encoded = this->peek(c);
-    this->step();
+    char normalized = toupper(c);
+    std::string::size_type index = this->m_wiring.find(normalized);
     
-    return encoded;
+    if (index == std::string::npos)
+        throw std::runtime_error("Invalid wiring. Character not found");
+    
+    return ascii_start + (int)index;
 }
 
 
