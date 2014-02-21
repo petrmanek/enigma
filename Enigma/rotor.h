@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 enum rotor_wiring {
     c1, c2, c3, // Commercial Enigma A, B - 1924
@@ -25,8 +26,8 @@ public:
     // Initialize rotor with known wiring
     rotor(rotor_wiring);
     
-    // Initialize rotor with custom wiring
-    rotor(std::string);
+    // Initialize rotor with custom wiring and turnover positions
+    rotor(std::string, std::vector<int>);
     
     // Gets current offset of the rotor (as letter)
     char get_offset();
@@ -43,11 +44,16 @@ public:
     // Encodes character in backward direction.
     char encode_backward(char);
     
+    // Checks whether rotor is in the turnover position
+    bool is_in_turnover_position();
+    
 private:
     int m_offset;
     std::string m_wiring;
+    std::vector<int> m_turnovers;
     
     std::string known_wiring(rotor_wiring);
+    std::vector<int> known_turnovers(rotor_wiring);
 };
 
 #endif /* defined(__Enigma__rotor__) */

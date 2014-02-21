@@ -16,5 +16,6 @@ void test_rotor();
 void test_rotor_custom_wiring();
 
 void test_rotor_forward_backward();
+void test_rotor_turnover();
 
 #endif /* defined(__Enigma__tests__) */

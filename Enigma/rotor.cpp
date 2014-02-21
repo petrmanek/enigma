@@ -22,10 +22,11 @@ const char ascii_start = 65;
 rotor::rotor(rotor_wiring type) {
     // initialize instance vars
     m_offset = 0;
+    m_turnovers = this->known_turnovers(type);
     m_wiring = this->known_wiring(type);
 }
 
-rotor::rotor(std::string wiring) {
+rotor::rotor(std::string wiring, std::vector<int> turnovers) {
     // check if the string has 26 chars
     if (wiring.length() != 26)
         throw std::runtime_error("Exactly 26 characters are expected in the string.");
@@ -44,11 +45,12 @@ rotor::rotor(std::string wiring) {
     
     // initialize instance vars
     m_offset = 0;
+    m_turnovers = turnovers;
     m_wiring = normalized;
 }
 
 
-#pragma mark - Offset
+#pragma mark - Stepping
 char rotor::get_offset() {
     return ascii_start + this->m_offset;
 }
@@ -59,6 +61,10 @@ void rotor::set_offset(int o) {
 
 void rotor::step() {
     this->set_offset(this->m_offset + 1);
+}
+
+bool rotor::is_in_turnover_position() {
+    return std::find(this->m_turnovers.begin(), this->m_turnovers.end(), this->m_offset) != this->m_turnovers.end();
 }
 
 
@@ -87,7 +93,48 @@ char rotor::encode_backward(char c) {
 }
 
 
-#pragma mark - Known wiring configurations (from wikipedia)
+#pragma mark - Known rotor configurations (from wikipedia)
+std::vector<int> rotor::known_turnovers(rotor_wiring type) {
+    switch (type) {
+        case w1:
+        {
+            return { 16 };
+        }
+            
+        case w2:
+        {
+            return { 4 };
+        }
+            
+        case w3:
+        {
+            return { 21 };
+        }
+            
+        case w4:
+        {
+            return { 9 };
+        }
+            
+        case w5:
+        {
+            return { 25 };
+        }
+            
+        case w6:
+        case w7:
+        case w8:
+        {
+            return { 12, 25 };
+        }
+            
+        default:
+        {
+            return { };
+        }
+    }
+}
+
 std::string rotor::known_wiring(rotor_wiring type) {
     switch (type) {
         case c1:
