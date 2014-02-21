@@ -11,6 +11,8 @@
 		E22E104518B6763500B5693F /* Enigma.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E22E104418B6763500B5693F /* Enigma.1 */; };
 		E22E105018B67C5C00B5693F /* rotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E104F18B67C5C00B5693F /* rotor.cpp */; };
 		E22E105318B695B700B5693F /* tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E22E105118B695B700B5693F /* tests.cpp */; };
+		E24B81CC18B7DAB9006FDFD5 /* plug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E24B81CA18B7DAB9006FDFD5 /* plug.cpp */; };
+		E24B81CF18B7DDB1006FDFD5 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E24B81CD18B7DDB1006FDFD5 /* util.cpp */; };
 		E2502B2118B79B49004E52E6 /* machine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2502B1F18B79B49004E52E6 /* machine.cpp */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,10 @@
 		E22E105118B695B700B5693F /* tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tests.cpp; sourceTree = "<group>"; };
 		E22E105218B695B700B5693F /* tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tests.h; sourceTree = "<group>"; };
 		E22E105518B6A21100B5693F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E24B81CA18B7DAB9006FDFD5 /* plug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plug.cpp; sourceTree = "<group>"; };
+		E24B81CB18B7DAB9006FDFD5 /* plug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plug.h; sourceTree = "<group>"; };
+		E24B81CD18B7DDB1006FDFD5 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		E24B81CE18B7DDB1006FDFD5 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		E2502B1F18B79B49004E52E6 /* machine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = machine.cpp; sourceTree = "<group>"; };
 		E2502B2018B79B49004E52E6 /* machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = machine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,13 +77,17 @@
 		E22E104118B6763500B5693F /* Enigma */ = {
 			isa = PBXGroup;
 			children = (
-				E22E104218B6763500B5693F /* main.cpp */,
 				E22E104F18B67C5C00B5693F /* rotor.cpp */,
 				E22E104E18B67C5600B5693F /* rotor.h */,
-				E22E105118B695B700B5693F /* tests.cpp */,
-				E22E105218B695B700B5693F /* tests.h */,
+				E24B81CA18B7DAB9006FDFD5 /* plug.cpp */,
+				E24B81CB18B7DAB9006FDFD5 /* plug.h */,
 				E2502B1F18B79B49004E52E6 /* machine.cpp */,
 				E2502B2018B79B49004E52E6 /* machine.h */,
+				E22E105118B695B700B5693F /* tests.cpp */,
+				E22E105218B695B700B5693F /* tests.h */,
+				E24B81CD18B7DDB1006FDFD5 /* util.cpp */,
+				E24B81CE18B7DDB1006FDFD5 /* util.h */,
+				E22E104218B6763500B5693F /* main.cpp */,
 				E22E104418B6763500B5693F /* Enigma.1 */,
 			);
 			path = Enigma;
@@ -137,7 +147,9 @@
 				E22E105018B67C5C00B5693F /* rotor.cpp in Sources */,
 				E2502B2118B79B49004E52E6 /* machine.cpp in Sources */,
 				E22E105318B695B700B5693F /* tests.cpp in Sources */,
+				E24B81CC18B7DAB9006FDFD5 /* plug.cpp in Sources */,
 				E22E104318B6763500B5693F /* main.cpp in Sources */,
+				E24B81CF18B7DDB1006FDFD5 /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

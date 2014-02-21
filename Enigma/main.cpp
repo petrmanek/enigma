@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[])
 {
     // Last test attempted
-    test_machine_encode();
+    test_plugboard();
 
     return 0;
 }

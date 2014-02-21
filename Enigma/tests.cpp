@@ -86,3 +86,25 @@ void test_machine_encode() {
     
     std::cout << "\n";
 }
+
+void test_plugboard() {
+    // Set up simple plugboard config and
+    // encode few letters, compare with
+    // empty configuration.
+    
+    plugboard p;
+    
+    std::cout << "Without any plugs: ";
+    for (char c = 'A'; c < 'G'; c++) {
+        std::cout << p.encode(c);
+    }
+    std::cout << "\n\nWith A-B, C-D plugs: ";
+    
+    p.set('A', 'B');
+    p.set('C', 'D');
+    for (char c = 'A'; c < 'G'; c++) {
+        std::cout << p.encode(c);
+    }
+    
+    std::cout << "\n";
+}

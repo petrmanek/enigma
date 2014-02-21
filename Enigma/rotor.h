@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "util.h"
 
 enum rotor_wiring {
     c1, c2, c3, // Commercial Enigma A, B - 1924

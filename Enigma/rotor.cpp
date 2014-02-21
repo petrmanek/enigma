@@ -14,10 +14,6 @@
 #include "rotor.h"
 
 
-#pragma mark - Constants
-const char ascii_start = 65;
-
-
 #pragma mark - Constructors
 rotor::rotor(rotor_wiring type) {
     // initialize instance vars
@@ -52,7 +48,7 @@ rotor::rotor(std::string wiring, std::vector<int> turnovers) {
 
 #pragma mark - Stepping
 char rotor::get_offset() {
-    return ascii_start + this->m_offset;
+    return ASCII_START + this->m_offset;
 }
 
 void rotor::set_offset(int o) {
@@ -74,7 +70,7 @@ char rotor::encode_forward(char c) {
         throw std::runtime_error("Lowercase or uppercase ASCII character expected.");
     
     char normalized = toupper(c);
-    int offset = (this->m_offset + normalized - ascii_start) % 26;
+    int offset = (this->m_offset + normalized - ASCII_START) % 26;
     
     return this->m_wiring[offset];
 }
@@ -89,7 +85,7 @@ char rotor::encode_backward(char c) {
     if (index == std::string::npos)
         throw std::runtime_error("Invalid wiring. Character not found");
     
-    return ascii_start + (int)index;
+    return ASCII_START + (int)index;
 }
 
 
