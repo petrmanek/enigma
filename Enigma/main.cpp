@@ -72,4 +72,12 @@ int main(int argc, const char * argv[])
  
             - unlike rotors, the reflector does not change offset during the encryption/decryption process
  
+    -p --plugs          Configures the plugboard
+ 
+        Plugboard swaps pairs of letters as they enter the rotor assembly, these letters are separated by commas (without spaces), and cannot repeat.
+        e.g. AD,PL,FY
+ 
+        Additional:
+            - since the swap occurs bidirectionally, the order of the letters doesn't matter (AD = DA, what's more AD,PL = PL,AD)
+ 
 */
