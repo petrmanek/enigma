@@ -3,7 +3,7 @@ Enigma
 A simple straightforward crypto tool emulating the famous Enigma machine.
 
 ### License
-This software and its source code are available to everyone under the MIT license.
+This software and its source code are distributed under the MIT license.
 
 ### Author
 Developed by Petr Mánek, Charles University in Prague in 2014.
