@@ -18,11 +18,16 @@ int main(int argc, const char * argv[])
 }
 
 /*
- USAGE: enigma [parameters: -e|-d|-h] [configuration: -r|-rf|-p] [flags: -s]
+ USAGE: enigma [parameters: -e|-d|-c|-h] [configuration: -r|-rf|-p|-ic|-ec|-gc] [flags: -s|-a]
  
  PARAMETERS:
     -e --encrypt        Encrypts data from stdin, the ciphertext is dumped into stdout
+ 
     -d --decrypt        Decrypts ciphertext from stdin, the data is dumped into stdout
+ 
+    -c --crack          Attempts to crack the code with brute force, the configuration section is used as a pool of choices on which to base the attack
+                        Assumes the code is successfully cracked, when a regex provided as a value for this parameter matches at least one group in the message
+ 
     -h --help           Displays this message
  
  CONFIGURATION:
@@ -82,7 +87,15 @@ int main(int argc, const char * argv[])
         Additional:
             - since the swap occurs bidirectionally, the order of the letters doesn't matter (AD = DA, what's more AD,PL = PL,AD)
  
+    -ec --export-config Dumps current configuration into a specified file
+    
+    -ic --import-config Reads configuration from specified file
+    
+    -gc --gen-config    Generates random secure configuration (7 rotors, 5 plugs)
+ 
  FLAGS:
-    -s --strict         Will omit any non-alphabetic chars, used only when encrypting
+    -s --strict         This will omit any non-alphabetic chars from the ciphertext (more secure, less readable), used only when encrypting
+ 
+    -a --accelerate     This will attempt to accelerate all calculations using the GPU (OpenCL-compatible hardware required)
  
 */
