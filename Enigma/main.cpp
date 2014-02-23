@@ -21,7 +21,8 @@ int main(int argc, const char * argv[])
  USAGE: enigma []
  
  PARAMETERS:
-    -g --generate       Generates random key file.
+    -e --encrypt        Encrypts data from stdin, the ciphertext is dumped into stdout
+    -d --decrypt        Decrypts ciphertext from stdin, the data is dumped into stdout
  
  CONFIGURATION:
     -r --rotors         Sets rotors in visible order (as seen on the physical machine, electrical current enters and exits the last rotor)
