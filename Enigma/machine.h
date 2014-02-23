@@ -21,9 +21,11 @@ public:
     std::string encode_string(std::string);
     
     plugboard plugs;
+    rotor reflector;
+    std::vector<rotor> rotors;
     
 private:
-    rotor m_r1, m_r2, m_r3, m_reflector;
+    void rotor_turnover(int i);
     
 };
 

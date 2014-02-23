@@ -114,6 +114,7 @@ void test_machine_encode_plugboard() {
     
     machine m;
     
+    m.rotors = std::vector<rotor>({ rotor(w1), rotor(w2), rotor(w3) });
     m.plugs.set('A', 'D');
     m.plugs.set('O', 'L');
     
@@ -128,19 +129,23 @@ void test_machine_encode_decode() {
     
     machine m, n;
     
+    m.rotors = std::vector<rotor>({ rotor(w1), rotor(w2), rotor(w3) });
+    m.reflector = rotor(w_ra);
     m.plugs.set('A', 'D');
     m.plugs.set('O', 'L');
     
+    n.rotors = std::vector<rotor>({ rotor(w1), rotor(w2), rotor(w3) });
+    n.reflector = rotor(w_ra);
     n.plugs.set('A', 'D');
     n.plugs.set('O', 'L');
     
     for (int i = 0; i < 100; i++) {
         std::string s = m.encode_string("AHOJ");
-        std::cout << "\n\nEntire encoded message: " << s;
+        std::cout << "\nEntire encoded message: " << s;
         std::cout << "\nDecoding now...";
         
         std::string t = n.encode_string(s);
-        std::cout << "\n\nEntire decoded message: " << t;
+        std::cout << "\nEntire decoded message: " << t << "\n";
     }
     
     std::cout << "\n";

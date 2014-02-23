@@ -9,65 +9,55 @@
 #include "machine.h"
 
 #pragma mark - Constructor
-machine::machine() : m_r1(w1), m_r2(w2), m_r3(w3), m_reflector(w_ra) {
-    
+machine::machine() {
+    rotors = std::vector<rotor>();
 }
 
 #pragma mark - Encoding
 char machine::encode(char c) {
-    std::cout << "\n---\n(rotors before: " << this->m_r1.get_offset() << this->m_r2.get_offset() << this->m_r3.get_offset() << ") \n";
+    // few checks
+    int nrotors = (int)this->rotors.size();
+    if (nrotors == 0)
+        throw std::runtime_error("No rotors found. Please set up at least one rotor.");
     
-    // current flow: input -> plugboard(f) -> r3(f) -> r2(f) -> r1(f) -> reflector -> r1(b) -> r2(b) -> r3(b) -> plugboard(b) -> output
+    if (!this->reflector.is_reflector())
+        throw std::runtime_error("The reflector must have symetric wiring. Check rotor::is_reflector().");
+    
     char e = c;
-    std::cout << e << " -> ";
     
+    // enter plugboard
     e = this->plugs.encode(e);
-    std::cout << "(PB) -> " << e << " -> ";
     
-    e = this->m_r3.encode_forward(e);
-    std::cout << "(R3) -> " << e << " -> ";
-
-    e = this->m_r2.encode_forward(e);
-    std::cout << "(R2) -> " << e << " -> ";
-
-    e = this->m_r1.encode_forward(e);
-    std::cout << "(R1) -> " << e << " -> ";
-
-    e = this->m_reflector.encode_forward(e);
-    std::cout << "(RF) -> " << e << " -> ";
-    
-    e = this->m_r1.encode_backward(e);
-    std::cout << "(R1) -> " << e << " -> ";
-
-    e = this->m_r2.encode_backward(e);
-    std::cout << "(R2) -> " << e << " -> ";
-
-    e = this->m_r3.encode_backward(e);
-    std::cout << "(R3) -> " << e << " -> ";
-
-    
-    e = this->plugs.encode(e);
-    std::cout << "(PB) -> " << e << "\n";
-    
-    
-    // todo: step recursive for any number of rotors
-    if (this->m_r3.is_in_turnover_position()) {
-        if (this->m_r2.is_in_turnover_position()) {
-            if (this->m_r1.is_in_turnover_position()) {
-                // ... and so on
-            }
-            
-            this->m_r1.step();
-        }
-        
-        this->m_r2.step();
+    // enter rotors in forward direction
+    for (int i = nrotors - 1; i >= 0; i--) {
+        e = this->rotors[i].encode_forward(e);
     }
-    this->m_r3.step();
+
+    // enter reflector
+    e = this->reflector.encode_forward(e);
     
-    std::cout << "(rotors after: " << this->m_r1.get_offset() << this->m_r2.get_offset() << this->m_r3.get_offset() << ") \n";
-    //std::cout << "Char " << c << " encoded as " << e;
+    // enter rotors in backward direction
+    for (int i = 0; i < nrotors; i++) {
+        e = this->rotors[i].encode_backward(e);
+    }
+    
+    // enter plugboard
+    e = this->plugs.encode(e);
+    
+    // step last rotor (and possibly others)
+    this->rotor_turnover(nrotors - 1);
     
     return e;
+}
+
+void machine::rotor_turnover(int i) {
+    if (i < 0) return;
+    
+    if (this->rotors[i].is_in_turnover_position()) {
+        this->rotor_turnover(i - 1);
+    }
+    
+    this->rotors[i].step();
 }
 
 std::string machine::encode_string(std::string s) {

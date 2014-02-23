@@ -15,6 +15,13 @@
 
 
 #pragma mark - Constructors
+rotor::rotor() {
+    // initialize instance vars
+    m_offset = 0;
+    m_turnovers = this->known_turnovers(straight);
+    m_wiring = this->known_wiring(straight);
+}
+
 rotor::rotor(rotor_wiring type) {
     // initialize instance vars
     m_offset = 0;
@@ -45,6 +52,22 @@ rotor::rotor(std::string wiring, std::vector<int> turnovers) {
     m_wiring = normalized;
 }
 
+
+#pragma mark - Properties
+bool rotor::is_reflector() {
+    for (int i = 0; i < 26; i++) {
+        char c = this->m_wiring[i];
+        int offset = c - ASCII_START;
+        
+        char d = this->m_wiring[offset];
+        char d_control = ASCII_START + i;
+        
+        if (d != d_control)
+            return false;
+    }
+    
+    return true;
+}
 
 #pragma mark - Stepping
 char rotor::get_offset() {
@@ -122,6 +145,11 @@ std::vector<int> rotor::known_turnovers(rotor_wiring type) {
         case w8:
         {
             return { 12, 25 };
+        }
+            
+        case straight:
+        {
+            return { 25 };
         }
             
         default:
@@ -274,6 +302,11 @@ std::string rotor::known_wiring(rotor_wiring type) {
         }
             
         case w_etw:
+        {
+            return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+            
+        case straight:
         {
             return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         }

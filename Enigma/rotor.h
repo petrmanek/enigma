@@ -15,6 +15,7 @@
 #include "util.h"
 
 enum rotor_wiring {
+    straight, // Default wiring
     c1, c2, c3, // Commercial Enigma A, B - 1924
     gr1, gr2, gr3, gr_ukw, gr_etw, // German Railway (Rocket) - 1941
     k1, k2, k3, k_ukw, k_etw, // Swiss K - 1939
@@ -24,6 +25,9 @@ enum rotor_wiring {
 
 class rotor {
 public:
+    // Initialize rotor with default wiring
+    rotor();
+    
     // Initialize rotor with known wiring
     rotor(rotor_wiring);
     
@@ -39,14 +43,17 @@ public:
     // Increments the offset
     void step();
     
-    // Encodes character in forward direction.
+    // Encodes character in forward direction
     char encode_forward(char);
     
-    // Encodes character in backward direction.
+    // Encodes character in backward direction
     char encode_backward(char);
     
     // Checks whether rotor is in the turnover position
     bool is_in_turnover_position();
+    
+    // Checks whether rotor can be used as reflector
+    bool is_reflector();
     
 private:
     int m_offset;
