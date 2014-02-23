@@ -18,11 +18,12 @@ int main(int argc, const char * argv[])
 }
 
 /*
- USAGE: enigma []
+ USAGE: enigma [parameters: -e|-d|-h] [configuration: -r|-rf|-p] [flags: -s]
  
  PARAMETERS:
     -e --encrypt        Encrypts data from stdin, the ciphertext is dumped into stdout
     -d --decrypt        Decrypts ciphertext from stdin, the data is dumped into stdout
+    -h --help           Displays this message
  
  CONFIGURATION:
     -r --rotors         Sets rotors in visible order (as seen on the physical machine, electrical current enters and exits the last rotor)
@@ -80,5 +81,8 @@ int main(int argc, const char * argv[])
  
         Additional:
             - since the swap occurs bidirectionally, the order of the letters doesn't matter (AD = DA, what's more AD,PL = PL,AD)
+ 
+ FLAGS:
+    -s --strict         Will omit any non-alphabetic chars, used only when encrypting
  
 */
