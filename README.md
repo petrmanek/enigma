@@ -2,13 +2,13 @@ Enigma
 ======
 A simple straightforward crypto tool emulating the famous Enigma machine.
 
-## License
+### License
 This software and its source code are available to everyone under the MIT license.
 
-## Author
+### Author
 Developed by Petr Mánek, Charles University in Prague in 2014.
 
-## See also
+### See also
 Here are few interesting articles I used when developing this software:
 
 * [Enigma machine](http://en.wikipedia.org/wiki/Enigma_machine)
